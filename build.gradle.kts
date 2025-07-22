@@ -67,7 +67,16 @@ repositories {
     maven("https://repo.spongepowered.org/maven/")
     // If you don't want to log in with your real minecraft account, remove this line
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
+
+    maven {
+        url = uri("https://maven.pkg.github.com/CPSDisplay/cpscore")
+        credentials {
+            username = project.findProperty("gpr.user") as String?
+            password = project.findProperty("gpr.key") as String?
+        }
+    }
 }
+
 
 val shadowImpl: Configuration by configurations.creating {
     configurations.implementation.get().extendsFrom(this)
@@ -87,6 +96,9 @@ dependencies {
     // If you don't want to log in with your real minecraft account, remove this line
     runtimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.2.1")
 
+    shadowImpl("fr.dams4k:cpscore:1.0-SNAPSHOT") {
+        isTransitive = false
+    }
 }
 
 // Tasks:

@@ -1,5 +1,6 @@
-package com.github.cpsdisplay.cpsdisplay4;
+package fr.dams4k.cpsdisplay;
 
+import fr.dams4k.cpscore.CPSCore;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
@@ -12,5 +13,8 @@ public class CPSDisplay {
         System.out.println("Dirt: " + Blocks.dirt.getUnlocalizedName());
 		// Below is a demonstration of an access-transformed class access.
         System.out.println("Color State: " + new GlStateManager.Color());
+
+        CPSCore core = new CPSCore();
+        core.testGson();
     }
 }

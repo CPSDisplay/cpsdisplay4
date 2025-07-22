@@ -1,4 +1,4 @@
-package com.github.cpsdisplay.cpsdisplay4.mixin;
+package fr.dams4k.cpsdisplay.mixin;
 
 import net.minecraft.client.gui.GuiMainMenu;
 import org.spongepowered.asm.mixin.Mixin;

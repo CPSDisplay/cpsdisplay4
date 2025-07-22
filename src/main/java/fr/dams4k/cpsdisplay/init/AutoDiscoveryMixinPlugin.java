@@ -1,4 +1,4 @@
-package com.github.cpsdisplay.cpsdisplay4.init;
+package fr.dams4k.cpsdisplay.init;
 
 import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
