@@ -1,6 +1,7 @@
 package fr.dams4k.cpsdisplay;
 
 import com.mojang.logging.LogUtils;
+import fr.dams4k.cpscore.CPSCore;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -32,7 +33,7 @@ import org.slf4j.Logger;
 public class CPSDisplay
 {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "examplemod";
+    public static final String MODID = "cpsdisplay";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
@@ -112,6 +113,8 @@ public class CPSDisplay
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            CPSCore core = new CPSCore();
+            LOGGER.info(core.getGsonValue());
         }
     }
 }
